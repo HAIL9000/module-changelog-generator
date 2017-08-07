@@ -5,9 +5,21 @@ begin
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
     ARGV.each { |a| task a.to_sym do ; end }
 
-    module_path = Pathname.new(ARGV[1])
+    module_path_arg = ARGV[1] ? ARGV[1] : ENV['MODULE_PATH']
+
+    if !module_path_arg
+      fail "Generation failed, please specify a module path via an argument or environment variable"
+    end
+
+    module_path = Pathname.new(module_path_arg)
+
+    last_tag = ARGV[2] ? ARGV[2] : ENV['LAST_TAG']
+
+    if !last_tag
+      fail "Generation failed, please specify a last tag via an argument or environment variable"
+    end
+
     metadata = (Blacksmith::Modulefile.new(module_path.join('metadata.json').to_s)).metadata
-    puts "METADATA = #{metadata}\n\n"
 
     header = <<-HERE
 # Change log
