@@ -40,6 +40,7 @@ All notable changes to this project will be documented in this file. Each new re
     config.project            = ENV['GITHUB_PROJECT'] || metadata['name']
     config.since_tag          = ARGV[2]
     config.user               = ENV['GITHUB_USER'] || 'puppetlabs'
+    config.exclude_labels     = %w{duplicate question invalid wontfix wont-fix modulesync}
   end
 
 rescue LoadError

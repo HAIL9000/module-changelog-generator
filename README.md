@@ -58,9 +58,18 @@ you've set, then you can call the rake task like so:
 In order for the changelog to be generated in a way thats readable and helpful, each pull request must be labled
 appropriately with one of the following:
 
-- feature
-- bufix
-- msync
+- `bug`: this label should be applied to pull requests that fix an existing bug
+- `enhancement`: this label should be applied to pull requests that add a new feature or enhancement
+
+Pull requests with the following labels will be ignored when the changelog is generated:
+
+- `duplicate`
+- `question`
+- `invalid`
+- `wontfix`
+- `wont-fix`
+- `modulesync`
+
 
 ## Workflow
 
