@@ -22,18 +22,19 @@ begin
     metadata = (Blacksmith::Modulefile.new(module_path.join('metadata.json').to_s)).metadata
 
     header = <<-HERE
-# Change log
+      # Change log
 
-All notable changes to this project will be documented in this file. Each new release typically also includes the latest modulesync defaults, these are not documented here and do not impact functionality of this module.
+      All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+      and this project adheres to [Semantic Versioning](http://semver.org).
     HERE
 
     config.add_pr_wo_labels   = false
     config.base               = module_path.join('CHANGELOG.md').to_s
     config.bug_labels         = 'bugfix,maint'
-    config.bug_prefix         = 'Bug Fixes'
+    config.bug_prefix         = 'Fixed'
     config.date_format        = '%Y-%m-%d'
     config.enhancement_labels = 'feature'
-    config.enhancement_prefix = 'Features'
+    config.enhancement_prefix = 'Added'
     config.future_release     = metadata['version']
     config.header             = header
     config.output             = module_path.join('CHANGELOG.md').to_s
