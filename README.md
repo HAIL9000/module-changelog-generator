@@ -38,7 +38,7 @@ generated, set it via the environment varible and the app will discover it. Tech
 `GITHUB PROJECT` (optional): This is an environment variable that you can set to define the name of the project (for example, puppetlabs-concat). If it is not set, then the name is extracted from the metadata.
 
 `GITHUB_USER` (optional): This is the namespace that the repository lives under (for example, puppetlabs/puppetlabs-concat).
-It can be set with the environment variable, but if not specified, it defaults 'puppetlabs'.
+It can be set with the environment variable, but if not specified, it defaults to 'puppetlabs'.
 
 
 If you don't want to set environment variables for the module path and last tag, or if you want to override the ones that
