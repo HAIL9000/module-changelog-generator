@@ -41,7 +41,7 @@ begin
     config.project            = ENV['GITHUB_PROJECT'] || metadata['name']
     config.since_tag          = ARGV[2]
     config.user               = ENV['GITHUB_USER'] || 'puppetlabs'
-    config.exclude_labels     = %w{duplicate question invalid wontfix wont-fix modulesync}
+    config.exclude_labels     = %w{maintenance duplicate question invalid wontfix wont-fix modulesync}
   end
 
 rescue LoadError

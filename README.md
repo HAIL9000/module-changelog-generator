@@ -57,6 +57,7 @@ For the changelog to be generated in a way that's readable and helpful, each pul
 
 Pull requests with the following labels are ignored when the changelog is generated:
 
+- `maintenance`
 - `duplicate`
 - `question`
 - `invalid`
